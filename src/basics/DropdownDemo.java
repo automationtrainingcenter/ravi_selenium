@@ -9,6 +9,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+/*
+ * automate the form except choose file in following url
+ * https://online.tsrtcpass.in/generalbuspass.do?category=Fresh
+ */
 public class DropdownDemo {
 	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", ".//drivers//chromedriver.exe");
@@ -71,7 +75,7 @@ public class DropdownDemo {
 		 * Select an option based on the inner text i.e. text in between opening
 		 * <option> and closing </option> tags -- selectByVistibleText(String arg)
 		 */
-		yearSelect.selectByVisibleText("2020");
+		yearSelect.selectByVisibleText("1998");
 		Thread.sleep(2000);
 
 		driver.close();
