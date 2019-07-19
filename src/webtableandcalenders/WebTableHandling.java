@@ -14,7 +14,7 @@ public class WebTableHandling extends BrowserHelper {
 		WebElement tableBody = driver.findElement(By.cssSelector("#product>tbody"));
 		//locate all the rows inside the table body using tr tag
 		List<WebElement> rows = tableBody.findElements(By.tagName("tr"));
-		//iterate over rows
+		//iterate over rows 
 		for(WebElement row : rows) {
 			//locate all the columns inside every row
 			List<WebElement> columns = row.findElements(By.tagName("td"));

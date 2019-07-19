@@ -4,11 +4,14 @@ package utitlities;
  * and also to close the browser
  */
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class BrowserHelper {
 	public static WebDriver driver;
@@ -47,4 +50,20 @@ public class BrowserHelper {
 		}
 	}
 	
+	
+	public static void selectOption(WebElement selectEle, String visibleText) {
+		Select selectElement = new Select(selectEle);
+		boolean status = true;
+		List<WebElement> options = selectElement.getOptions();
+		for(WebElement option : options) {
+			if(option.getText().equalsIgnoreCase(visibleText)) {
+				option.click();
+				status = false;
+				break;
+			}
+		}
+		if(status) {
+			System.out.println("there is no option with visible text "+visibleText);
+		}
+	}
 }

@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import utitlities.BrowserHelper;
+
 public class ListBoxDemo {
 	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", ".//drivers//chromedriver.exe");
@@ -48,6 +50,9 @@ public class ListBoxDemo {
 		// deselect an option based on visible text
 		fruitSelect.deselectByVisibleText("Apple");
 		Thread.sleep(2000);
+		
+		BrowserHelper.selectOption(fruitsList, "mango");
+		Thread.sleep(3000);
 
 		driver.close();
 	}
