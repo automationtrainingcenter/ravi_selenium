@@ -11,10 +11,15 @@ public class SliderDemo extends BrowserHelper{
 		openBrowser("chrome", "https://www.axisbank.com/retail/calculators/personal-loan-emi-calculator");
 		//locate slider head and slider
 		WebElement sliderHead = driver.findElement(By.xpath("//input[@id='loanAmtSlider']/preceding-sibling::span//span[@class='irs-single']"));
+		//locate slider and find the width of the slider
+		WebElement slider = driver.findElement(By.xpath("//input[@id='loanAmtSlider']/preceding-sibling::span//span[@class='irs-line']"));
+		int width = slider.getSize().getWidth();
 		//create Actions class object
 		Actions actions = new Actions(driver);
-		actions.dragAndDropBy(sliderHead, 150, 0).build().perform();
+		actions.dragAndDropBy(sliderHead, (int)(width * 0.5), 0).build().perform();
 		sleep(3000);
+		actions.dragAndDropBy(sliderHead, (int)(width * -0.3), 0).build().perform();
+		sleep(2000);
 		closeBrowser();
 
 	}
