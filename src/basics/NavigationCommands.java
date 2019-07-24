@@ -1,7 +1,5 @@
 package basics;
 
-import java.net.URL;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriver.Navigation;
 import org.openqa.selenium.firefox.FirefoxDriver;
