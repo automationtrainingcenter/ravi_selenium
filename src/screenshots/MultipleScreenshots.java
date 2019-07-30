@@ -23,5 +23,5 @@ public class MultipleScreenshots extends BrowserHelper{
 		}
 		closeBrowser();
 	}
-
+ 
 }
