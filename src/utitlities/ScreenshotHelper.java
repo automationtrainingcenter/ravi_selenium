@@ -25,16 +25,20 @@ public class ScreenshotHelper extends GenericHelper{
 	 * @param folderName
 	 * @param fileName
 	 */
-	public static void takeScreenShot(WebDriver driver, String folderName, String fileName) {
+	public static String takeScreenShot(WebDriver driver, String folderName, String fileName) {
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File srcImg = ts.getScreenshotAs(OutputType.FILE);
 		try {
 			File destImg = new File(getFilePath(folderName, fileName+getTime()+".png"));
 			BufferedImage bi = ImageIO.read((srcImg));
 			ImageIO.write(bi, "png", destImg);
+			return destImg.getAbsolutePath();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
+			return null;
 		}
+		
+		
 	}
 	/**
 	 * This method accepts folder name and file name without 
